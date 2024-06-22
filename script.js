@@ -3,6 +3,11 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function () {
+  let firstName = prompt("Enter employee first name")
+  let lastName = prompt("Enter employee's last name")
+  let salary = prompt("Enter employee's salary")
+  let array = firstName.split(",")
+  let array = lastName.split(",")
   // TODO: Get user input to create and return an array of employee objects
 };
 
@@ -24,7 +29,7 @@ const getRandomEmployee = function (employeesArray) {
 
 // Display employee data in an HTML table
 const displayEmployees = function (employeesArray) {
-  // Get the employee table
+  
   const employeeTable = document.querySelector('#employee-table');
 
   // Clear the employee table
