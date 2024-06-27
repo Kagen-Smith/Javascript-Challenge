@@ -12,13 +12,12 @@ const collectEmployees = function () {
   const lastName = prompt("Enter last name");
   const salaryPrompt = prompt("Enter employee's salary");
   
-  const employeesArray = {
-    first_Name: firstName,
-    last_Name: lastName,
-    salary: salaryPrompt
-   };
-   
-  // employeesArray.push = firstName, lastName, salaryPrompt
+  const employeesArray = [
+    {firstName: firstName, lastName: lastName, salary: salaryPrompt}, 
+     ];
+ 
+     employeesArray.push(firstName, lastName, salaryPrompt);
+
   console.log(employeesArray);
   const addEmployees = confirm("do you want to add employees?");
   if (addEmployees) {
