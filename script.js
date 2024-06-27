@@ -1,37 +1,31 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-addEmployeesBtn.addEventListener("click", function () {
-  
-})
+ addEmployeesBtn.addEventListener("click", function() {
+
+ });
+
+
+
 const collectEmployees = function () {
-  let firstName = prompt("Enter employee first name")
-  let lastName = prompt("Enter employee's last name")
-  let salary = prompt("Enter employee's salary")
-  
   let employeesArray = [];
-  employeesArray.push(firstName);
-  employeesArray.push(lastName);
-  employeesArray.push(salary);
-  console.log(employeesArray);
-  let employee1 = {
-    firstName: ",",
-    lastName: ",",
-    salary:","
-  };
-  employeesArray.push(employee1);
- 
-  let employee2 = {
-    firstName: ",",
-    lastName: ",",
-    salary: ","
-  };
-  employeesArray.push(employee2);
-  let employee3 = {
-    firstName:",",
-    lastName:",",
-    salary:","
-  };
-  employeesArray.push(employee3);
+  const firstName = prompt("Enter first name");
+  const lastName = prompt("Enter last name");
+  const salaryPrompt = prompt("Enter employee's salary");
+  if (!isNaN(salaryPrompt)) {
+    let numberValue = Number(salaryPrompt);
+  } else {
+    console.log("invalid input please try again");
+  }
+
+  employeesArray.push({firstName, lastName, salaryPrompt});
+  const addEmployees = confirm("do you want to add employees?");
+
+  if (addEmployees) {
+    collectEmployees;
+  } else {
+    employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    displayEmployees ();
+  }
 
 };
 
