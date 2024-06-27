@@ -7,26 +7,29 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 
 const collectEmployees = function () {
-  let employeesArray = [];
+ 
   const firstName = prompt("Enter first name");
   const lastName = prompt("Enter last name");
   const salaryPrompt = prompt("Enter employee's salary");
-  if (!isNaN(salaryPrompt)) {
-    let numberValue = Number(salaryPrompt);
-  } else {
-    console.log("invalid input please try again");
-  }
-
-  employeesArray.push({firstName, lastName, salaryPrompt});
+  
+  const employeesArray = {
+    first_Name: firstName,
+    last_Name: lastName,
+    salary: salaryPrompt
+   };
+   
+  // employeesArray.push = firstName, lastName, salaryPrompt
+  console.log(employeesArray);
   const addEmployees = confirm("do you want to add employees?");
-
   if (addEmployees) {
-    collectEmployees;
-  } else {
-    employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
-    displayEmployees ();
-  }
+    collectEmployees();
+  };
 
+  if (!isNaN(salaryPrompt)) {
+    parseInt(salaryPrompt)
+  } else {
+    alert("invalid input please try again")
+  };
 };
 
 
