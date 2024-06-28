@@ -10,9 +10,14 @@ const collectEmployees = function () {
  
   const firstName = prompt("Enter first name");
   const lastName = prompt("Enter last name");
-  const salaryPrompt = prompt("Enter employee's salary");
-  
-  employeesArray.push({firstName: firstName, lastName: lastName, salary: salaryPrompt});
+  const salary = prompt("Enter employee's salary");
+  if (!isNaN(salary)) {
+    parseInt(salary)
+  } else {
+    alert("invalid input please try again")
+  };
+
+  employeesArray.push({firstName: firstName, lastName: lastName, salary: salary});
   console.log(employeesArray);
   const addEmployees = confirm("do you want to add employees?");
   if (addEmployees) {
@@ -21,28 +26,24 @@ const collectEmployees = function () {
     displayEmployees(employeesArray)
   };
   
-  if (!isNaN(salaryPrompt)) {
-    parseInt(salaryPrompt)
-  } else {
-    alert("invalid input please try again")
-  };
+  
 };
 
 // Display the average salary
-const displayAverageSalary = function (employeesArray) {
-  for (let i = 0; i < length; i++) {
-    averagesalary += employeesArray[i].salaryPrompt
+const displayAverageSalary = function () {
+  let averageSalary = 0
+  for (let i = 0; i < employeesArray.length; i++) {
+    averageSalary += employeesArray[i].salary
   }
+  console.log(`the average salary is ${averageSalary}`);
 };
 
   
 
 // Select a random employee
-const getRandomEmployee = function (employeesArray) {
+const getRandomEmployee = function () {
   // TODO: Select and display a random employee
-  let randomEmployee = Math.floor(Math.random() * employeesArray.length);
-  let randomObject = employeesArray(randomEmployee);
-  console.log(`random object, ${randomEmployee}`);
+  
 };
 
 /*
