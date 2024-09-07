@@ -1,61 +1,19 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
- addEmployeesBtn.addEventListener("click", function() {
 
- });
-
-const employeesArray =[];
-
+// Collect employee data
 const collectEmployees = function () {
- 
-  const firstName = prompt("Enter first name");
-  const lastName = prompt("Enter last name");
-  const salary = prompt("Enter employee's salary");
-  if (!isNaN(salary)) {
-    parseInt(salary)
-  } else {
-    alert("invalid input please try again")
-  };
-
-  employeesArray.push({firstName: firstName, lastName: lastName, salary: salary});
-  console.log(employeesArray);
-  const addEmployees = confirm("do you want to add employees?");
-  if (addEmployees) {
-    collectEmployees();
-  } else {
-    displayEmployees(employeesArray)
-  };
-  
-  
+  // TODO: Get user input to create and return an array of employee objects
 };
 
 // Display the average salary
-const averageSalary = function (employeesArray) {
-  let total = 0;
-  for (let i = 0; i < employeesArray.length; i++) {
-    total += employeesArray[i].salary;
-  }
-  return total / employeesArray.length;
-} 
-const displayAverageSalary = function () {
-  let averageSalary = employeesArray.salary
-  for (let i = 0; i < employeesArray.length; i++) {
-    averageSalary += employeesArray[i].salary;
-  }
-  return averageSalary / employeesArray.length;
+const displayAverageSalary = function (employeesArray) {
+  // TODO: Calculate and display the average salary
 };
-let average = averageSalary(employeesArray)
-  console.log(`The average employee salary between our employees is ${average}`);
-
-
-  
 
 // Select a random employee
-const getRandomEmployee = function () {
+const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
-  let randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
-  console.log(`congrats to ${randomEmployee} our random drawing winner!`); 
-
 };
 
 /*
@@ -66,7 +24,7 @@ const getRandomEmployee = function () {
 
 // Display employee data in an HTML table
 const displayEmployees = function (employeesArray) {
-  
+  // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
 
   // Clear the employee table
@@ -123,3 +81,4 @@ const trackEmployeeData = function () {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
